@@ -1,3 +1,59 @@
 <script type="module" src="{{ base_path }}/assets/js/main.min.js"></script>
 
 {% include analytics.html %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.copy-bibtex-button').forEach(function (button) {
+      button.addEventListener('click', function () {
+        var box = button.closest('.bibtex-box');
+        if (!box) return;
+        var pre = box.querySelector('.bibtex-pre');
+        var text = pre ? pre.innerText.trim() : '';
+        if (!text) return;
+
+        function copyText(t) {
+          var textarea = document.createElement('textarea');
+          textarea.value = t;
+          textarea.setAttribute('readonly', '');
+          textarea.style.position = 'absolute';
+          textarea.style.left = '-9999px';
+          document.body.appendChild(textarea);
+          textarea.select();
+          try {
+            var successful = document.execCommand('copy');
+            document.body.removeChild(textarea);
+            return successful;
+          } catch (err) {
+            document.body.removeChild(textarea);
+            return false;
+          }
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            var original = button.innerText;
+            button.innerText = 'Copied!';
+            setTimeout(function () { button.innerText = original; }, 1500);
+          }).catch(function () {
+            if (copyText(text)) {
+              var original = button.innerText;
+              button.innerText = 'Copied!';
+              setTimeout(function () { button.innerText = original; }, 1500);
+            } else {
+              window.prompt('Copy to clipboard: Ctrl+C, Enter', text);
+            }
+          });
+        } else {
+          if (copyText(text)) {
+            var original = button.innerText;
+            button.innerText = 'Copied!';
+            setTimeout(function () { button.innerText = original; }, 1500);
+          } else {
+            window.prompt('Copy to clipboard: Ctrl+C, Enter', text);
+          }
+        }
+      });
+    });
+  });
+</script>
