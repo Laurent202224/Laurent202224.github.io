@@ -60,3 +60,109 @@ The course covered:
 - Modeling and control of fixed-wing aircraft
 
 The course emphasized both theoretical foundations and practical applications, with exercises accompanying each topic to develop hands-on experience in modeling and controlling robotic systems.
+
+### Spring Semester 2025
+
+### Computation Control
+
+This course focused on modern control and decision-making algorithms, with an emphasis on learning-based and data-driven approaches.
+
+Key topics included:
+
+- Dynamic programming and Linear Quadratic Regulation (LQR)
+- Model Predictive Control (MPC)
+- Economic and robust MPC
+- Data-driven predictive control (DeePC)
+- Markov Decision Processes (MDPs)
+- Monte Carlo methods
+- Reinforcement learning (SARSA, Q-Learning)
+
+All topics were accompanied by hands-on coding exercises.
+
+Final project:
+
+- Developed and compared three control strategies for traffic management using the SUMO simulator:
+  - Model Predictive Control (MPC)
+  - Data-Enabled Predictive Control (DeePC)
+  - Temporal Predictive Control (TPC)
+- Focus on performance, robustness, and scalability in realistic traffic scenarios.
+
+### Model Predictive Control
+
+This course provided an in-depth treatment of Model Predictive Control as an optimization-based control framework for constrained systems.
+
+Key topics included:
+
+- Foundations of optimal control and numerical optimization
+- Receding-horizon control for linear systems
+- Constraint handling and stability guarantees in MPC
+- Tracking and offset-free control
+- Soft constraints and practical implementation aspects
+- Robust MPC and constraint satisfaction under uncertainty
+- Tube MPC
+
+The course combined theory with implementation exercises.
+
+Final project:
+
+- Designed and implemented an MPC controller for a multi-compartment refrigerated truck.
+- Objective: regulate temperature across three compartments with external disturbances (ambient weather).
+
+### Recursive Estimation
+
+This course introduced probabilistic state estimation methods for dynamic systems.
+
+Key topics included:
+
+- Bayesian inference and Bayes’ theorem
+- Bayesian filtering and tracking
+- State estimation from probability distributions
+- Kalman filter and its interpretation as a state observer
+- Extended Kalman Filter (EKF)
+- Particle filters
+- Observer-based control and the separation principle
+
+All concepts were reinforced through practical coding exercises, focusing on real-world estimation problems in robotics.
+
+### Autonomous Mobile Robots
+
+This course covered the fundamental principles required to design and build autonomous mobile robotic systems, with a strong emphasis on perception, localization, and navigation.
+
+Key topics included:
+
+- Robot kinematics and locomotion
+- Rigid-body motion and control
+- Perception: filtering, edge detection, feature extraction and matching
+- Probabilistic state estimation (Kalman filtering)
+- Simultaneous Localization and Mapping (SLAM)
+- Global and local path planning
+- Object detection and tracking
+
+The course combined theoretical foundations with practical exercises on real robotic platforms, enabling hands-on experience in developing autonomous systems.
+
+### Autumn Semester 2025
+
+### Advanced Model Predictive Control
+
+This course provided an in-depth exploration of advanced Model Predictive Control (MPC) techniques for uncertain and stochastic systems, with a strong focus on robustness and learning-based extensions.
+
+Key topics included:
+
+- Review of Bayesian statistics, stochastic systems, and stochastic optimal control
+- Nominal MPC for uncertain systems (nominal robustness)
+- Robust MPC formulations
+- Stochastic MPC
+- Set-membership system identification and robust data-driven MPC
+- Bayesian regression and stochastic data-driven MPC
+- MPC as a safety filter for reinforcement learning
+
+The course combined theoretical foundations with practical coding exercises on each topic.
+
+Final projects:
+
+- Design and implementation of a nominal linear MPC controller
+- Development of a robust MPC controller for uncertain systems
+- Implementation of a robust learning-based MPC approach
+- Design of an MPC-based safety filter
+
+These projects provided hands-on experience in bridging classical control methods with modern data-driven and learning-based approaches.
