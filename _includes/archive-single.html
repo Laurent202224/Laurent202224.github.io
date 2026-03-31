@@ -27,10 +27,18 @@
     {% endif %}
 
     <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% if post.collection == 'portfolio' %}
+        {% if post.link %}
+          <a href="{{ post.link }}">{{ title }}</a>
+        {% else %}
+          {{ title }}
+        {% endif %}
       {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+        {% if post.link %}
+          <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        {% else %}
+          <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+        {% endif %}
       {% endif %}
     </h2>
     
@@ -38,16 +46,24 @@
       <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
 
-        {% if post.collection == 'teaching' %}
+        {% if post.collection == 'portfolio' %}
+          {% if post.period %}
+            <p>{{ post.period }}</p>
+          {% elsif post.date %}
+            <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+          {% endif %}
+        {% elsif post.collection == 'teaching' %}
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.collection == 'publications' %}
           <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.date %}
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
         {% endif %}
 
-    {% if post.excerpt and site.read_more != 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
+    {% if post.collection == 'portfolio' %}
+      <div class="archive__item-excerpt" itemprop="description">{{ post.content | markdownify }}</div>
+    {% elsif post.excerpt and site.read_more != 'enabled' %}
+      <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
     {% elsif post.excerpt and site.read_more == 'enabled' %}
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
@@ -56,13 +72,13 @@
     {% if post.citation %}
       <p>Recommended citation: {{ post.citation }}</p>
     {% endif %}
-    {% if post.bibtex %}
+    <!-- {% if post.bibtex %}
       <p><strong>BibTeX</strong></p>
       <div class="bibtex-box" style="border:1px solid #d0d0d0;background:#fafafa;border-radius:8px;padding:0.75rem;position:relative;margin-bottom:0.75rem;font-size:0.9rem;">
         <button type="button" class="copy-bibtex-button" style="position:absolute;right:0.5rem;top:0.5rem;border:none;background:#1f77b4;color:white;padding:0.25rem 0.6rem;border-radius:4px;font-size:0.75rem;cursor:pointer;">Copy</button>
         <pre class="bibtex-pre" style="margin:0;white-space:pre-wrap;word-break:break-word;">{{ post.bibtex }}</pre>
       </div>
-    {% endif %}
+    {% endif %} -->
     {% if post.paperurl or post.slidesurl or post.bibtexurl %}
       <p>
         {% if post.paperurl %}<a href="{{ post.paperurl }}">Download Paper</a>{% endif %}
