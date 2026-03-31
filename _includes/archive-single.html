@@ -40,6 +40,9 @@
           <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
         {% endif %}
       {% endif %}
+      {% if post.collection == 'portfolio' and post.title contains "Obstacle Avoidance With Ultrasonic Sensors on Nano Drones" %}
+        <img src="/images/crazyflie.png" alt="Crazyflie" style="float:right;margin:0 0 0.75rem 1rem;width:240px;max-width:100%;height:auto;border-radius:0.5rem;" />
+      {% endif %}
     </h2>
     
     {% if post.read_time %}
@@ -61,7 +64,14 @@
         {% endif %}
 
     {% if post.collection == 'portfolio' %}
-      <div class="archive__item-excerpt" itemprop="description">{{ post.content | markdownify }}</div>
+      {% if post.title contains "Obstacle Avoidance With Ultrasonic Sensors on Nano Drones" %}
+        <div style="display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap;">
+          <!-- <img src="/images/crazyflie.png" alt="Crazyflie" style="width:240px;max-width:100%;height:auto;border-radius:0.5rem;object-fit:contain;" /> -->
+          <div class="archive__item-excerpt" itemprop="description">{{ post.content | markdownify }}</div>
+        </div>
+      {% else %}
+        <div class="archive__item-excerpt" itemprop="description">{{ post.content | markdownify }}</div>
+      {% endif %}
     {% elsif post.excerpt and site.read_more != 'enabled' %}
       <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
     {% elsif post.excerpt and site.read_more == 'enabled' %}
