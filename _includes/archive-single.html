@@ -41,7 +41,10 @@
         {% endif %}
       {% endif %}
       {% if post.collection == 'portfolio' and post.title contains "Obstacle Avoidance With Ultrasonic Sensors on Nano Drones" %}
-        <img src="/images/crazyflie.png" alt="Crazyflie" style="float:right;margin:0 0 0.75rem 1rem;width:240px;max-width:100%;height:auto;border-radius:0.5rem;" />
+        <img src="/images/crazyflie.png" alt="Crazyflie" class="popup-image" style="float:right;margin:0 0 0.75rem 1rem;width:240px;max-width:100%;height:auto;border-radius:0.5rem;cursor:pointer;" />
+      {% endif %}
+      {% if post.collection == 'portfolio' and post.title contains "Duckietown — LightGuard" %}
+        <img src="/images/Duckietown_Architecture.png" alt="Duckietown Architecture" class="popup-image" style="float:right;margin:0 0 0.75rem 1rem;width:240px;max-width:100%;height:auto;border-radius:0.5rem;cursor:pointer;" />
       {% endif %}
     </h2>
     
