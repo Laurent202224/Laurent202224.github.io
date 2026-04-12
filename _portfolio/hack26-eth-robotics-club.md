@@ -20,3 +20,5 @@ These functionalities were built on top of a decoupled whole-body control framew
 In addition, we explored creative AI applications by implementing motion-to-video generation using the GENMO model, linking physical robot actions with generative visual outputs.
 
 This project combined rapid prototyping, robotics, and AI in a highly collaborative environment, emphasizing efficient system integration and real-time problem solving.
+
+[Video](https://youtu.be/WhozCEpkOhM)
