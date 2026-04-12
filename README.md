@@ -1,5 +1,5 @@
 
-    # Laurent Schroeder — Personal Website
+# Laurent Schroeder — Personal Website
 
     This repository contains the source for my personal website.
 
