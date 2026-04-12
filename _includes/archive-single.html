@@ -58,6 +58,10 @@
       {% if post.collection == 'portfolio' and post.title contains "SPRIND Fully Autonomous Flight 2.0" %}
         <img src="/images/Avientus_Drone.jpg" alt="Avientus Drone" class="popup-image" style="float:right;margin:0 0 0.75rem 1rem;width:240px;max-width:100%;height:auto;border-radius:0.5rem;cursor:pointer;" />
       {% endif %}
+      {% if post.collection == 'portfolio' and post.title contains "Hack26 – ETH Robotics Club" %}
+        <!-- Display Hack26 image slightly smaller (15% smaller than the default 240px) -->
+        <img src="/images/Hack26_hello.jpg" alt="Hack26" class="popup-image" style="float:right;margin:0 0 0.75rem 1rem;width:204px;max-width:100%;height:auto;border-radius:0.5rem;cursor:pointer;" />
+      {% endif %}
       {% if post.collection == 'portfolio' and post.title contains "Spaceship Docking & Highway Driving" %}
         <img src="/images/Spacecraft.jpg" alt="Spacecraft" class="popup-image" style="float:right;margin:0 0 0.75rem 1rem;width:240px;max-width:100%;height:auto;border-radius:0.5rem;cursor:pointer;" />
       {% endif %}
