@@ -1,6 +1,7 @@
 ---
 title: "Language-Guided Drone Control"
 collection: portfolio
+date: 2025-06-01
 period: "February 2025 – June 2025"
 ---
 

@@ -3,7 +3,7 @@ title: "Duckietown — LightGuard"
 excerpt: "Autonomous navigation system for a Duckiebot in a miniature urban environment with traffic lights."
 collection: portfolio
 date: 2025-01-15
-period: "Sep 2024 – Jan 2025"
+period: "September 2024 – January 2025"
 ---
 
 In this project, we developed an autonomous navigation system for a Duckiebot operating in a miniature urban environment with traffic lights. The objective was to enable the robot to drive safely and reliably while adhering to common traffic rules.

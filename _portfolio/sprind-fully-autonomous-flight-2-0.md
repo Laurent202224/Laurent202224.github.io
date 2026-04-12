@@ -2,6 +2,8 @@
 title: "SPRIND Fully Autonomous Flight 2.0"
 excerpt: "Fully autonomous hexacopter for last-mile delivery and search-and-rescue in GNSS-denied environments."
 collection: portfolio
+collection: portfolio
+date: 2026-02-01
 period: "September 2025 – February 2026"
 link: "https://www.sprind.org/en/actions/challenges/funke-fully-autonomous-flight-2.0"
 ---

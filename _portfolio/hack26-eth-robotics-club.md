@@ -2,6 +2,8 @@
 title: "Hack26 – ETH Robotics Club"
 excerpt: "48-hour hackathon project building human–robot interaction capabilities on a Unitree G1 humanoid."
 collection: portfolio
+collection: portfolio
+date: 2026-03-01
 period: "March 2026"
 ---
 
