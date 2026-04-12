@@ -71,15 +71,20 @@
       overlay.style.justifyContent = 'center';
       overlay.style.zIndex = '9999';
 
-      var container = document.createElement('div');
-      container.style.position = 'relative';
-      container.style.maxWidth = '95%';
-      container.style.maxHeight = '95%';
+  var container = document.createElement('div');
+  container.style.position = 'relative';
+  container.style.maxWidth = '95%';
+  /* cap the modal using viewport-aware sizing so tall images fit */
+  container.style.maxHeight = 'calc(100vh - 120px)';
+  container.style.padding = '12px';
+  container.style.boxSizing = 'border-box';
 
       var img = document.createElement('img');
       img.className = 'image-modal-img';
-      img.style.maxWidth = '100%';
-      img.style.maxHeight = '100%';
+  img.style.maxWidth = '100%';
+  /* ensure image scales to fit the available modal space and preserves aspect ratio */
+  img.style.maxHeight = 'calc(100vh - 160px)';
+  img.style.objectFit = 'contain';
       img.style.display = 'block';
       img.style.margin = '0 auto';
       img.style.boxShadow = '0 8px 30px rgba(0,0,0,0.5)';
@@ -89,9 +94,10 @@
       close.className = 'image-modal-close';
       close.innerHTML = '✕';
       close.setAttribute('aria-label', 'Close');
-      close.style.position = 'absolute';
-      close.style.top = '-12px';
-      close.style.right = '-12px';
+  close.style.position = 'absolute';
+  /* keep the close button inside the modal container so it stays visible */
+  close.style.top = '8px';
+  close.style.right = '8px';
       close.style.background = '#111';
       close.style.color = '#fff';
       close.style.border = 'none';
